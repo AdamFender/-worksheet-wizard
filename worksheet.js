@@ -20,8 +20,8 @@ async function generate() {
 
   try {
     const prompt = `
-Create a ${style} worksheet about "${topic}" for grade ${g}.
-Include ${n} questions.
+Create a ${style} worksheet about "${topic}" for grade ${grade}.
+Include ${num} questions.
 After the questions, add a section "Answer Key" with correct answers.
 Label the student section "Name: ___________   Date: ___________".
 Format clearly with numbered questions.
