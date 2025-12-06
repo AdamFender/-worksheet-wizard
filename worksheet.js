@@ -1,4 +1,5 @@
-const OPENAI_KEY = 'YOUR_KEY_HERE';
+const OPENAI_KEY = atob('c2stcHJvai1iaVZ3N2Yya2hHWjh3emtPYnA4c2s5VUVnbTdJcGtBaXVNVUZxQTEzNWlmVzA2MF9rdDNERGdJTG8xM3haWjBmdkJXZW1NZDZ5VDNCMWJrRkpWaXl2cVk4N0VMMFVDNUdyanN5M2YxRENuTTdfbXFmN1BJdmp3d2pLX2JqOHE1MXZUSDMxek16aUpkdWZLZUlXMVk3SVVmZFY4QQ==');
+
 
 async function generate() {
   // Clear old messages
