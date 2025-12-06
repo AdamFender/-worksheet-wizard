@@ -1,5 +1,4 @@
-const OPENAI_KEY = atob('c2stcHJvai1iaVZ3N2Yya2hHWjh3emtPYnA4c2s5VUVnbTdJcGtBaXVNVUZxQTEzNWlmVzA2MF9rdDNERGdJTG8xM3haWjBmdkJXZW1NZDZ5VDNCMWJrRkpWaXl2cVk4N0VMMFVDNUdyanN5M2YxRENuTTdfbXFmN1BJdmp3d2pLX2JqOHE1MXZUSDMxek16aUpkdWZLZUlXMVk3SVVmZFY4QQ==');
-
+const OPENAI_KEY = 'sk-proj-biVw7f2khGZ8wzkObp8sk9UEgm7IpkAiuMUFqA135ifW060_kt3EDg_ILo13xZZ0fzBWemMd6yT3B1bkFJViyvqY87eL0UC5Grjsy3f1DCnM7_mqf7PIvjwwjK_bj8q51vTH31zMziJdufKeIW1Y7IUfdV8A';
 
 async function generate() {
   // Clear old messages
