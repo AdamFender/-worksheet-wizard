@@ -12,11 +12,11 @@ async function generate() {
 
   // Validation
   if (!topic) return showMsg('Enter a topic', 'error');
-  
+
   // Show loading spinner
   const btn = document.querySelector('button');
   btn.disabled = true;
-  btn.innerHTML = `<span class="spin">⚙️</span> Building...`;
+  btn.innerHTML = '<span class="spin">⚙️</span> Building...';
 
   try {
     const prompt = `
@@ -46,7 +46,7 @@ async function callOpenAI(prompt) {
       'Authorization': `Bearer ${OPENAI_KEY}`
     },
     body: JSON.stringify({
-      model: 'gpt-3.5-turbo', // Corrected model name here
+      model: 'gpt-3.5-turbo',
       messages: [{ role: 'user', content: prompt }],
       temperature: 0.3,
       max_tokens: 1500
@@ -65,26 +65,26 @@ async function callOpenAI(prompt) {
 function buildPDF(text) {
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF({ unit: 'pt', format: 'letter', lineHeight: 1.2 });
-  
-  // Title
-  doc.setFontSize(16);
-  doc.text('Worksheet', 40, 60);
-  
+
+  // Student header
+  doc.setFont('Helvetica', 'bold');
+  doc.setFontSize(40, 60);
+  doc.text('Student Worksheet', 40, 60);
+
   // Student header
   doc.setFontSize(12);
-  doc.text('Name: _____________________   Date: ___________', 40, 90);
-  
+  doc.text('Name: ___________   Date: ___________', 40, 90);
+
   // Body
-  const body = doc.splitTextToSize(text, 500);
-  doc.text(body, 40, 120);
-  
+  doc.text(text, 40, 120, {
+    align: 'justify',
+    lineHeight: 1.2
+  });
+
   // Footer
   doc.setFontSize(10);
   doc.text('Generated with Worksheet Wizard', 40, 750);
-  
-  // Download
-  const slug = document.getElementById('topic').value.trim().replace(/\W+/g, '-');
-  doc.save(`${slug}-worksheet.pdf`);
+  doc.save('Worksheet.pdf');
 }
 
 function showMsg(text, type) {
