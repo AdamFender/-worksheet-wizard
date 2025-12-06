@@ -1,4 +1,4 @@
-const OPENAI_KEY = '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'; // 
+const OPENAI_KEY = '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'; // Your API key here
 
 async function generate() {
   // Clear old messages
@@ -29,9 +29,9 @@ Format clearly with numbered questions.
 
     const text = await callOpenAI(prompt);
     buildPDF(text);
-    showMsg('✅ Success! PDF downloaded.', 'success');
+    showMsg('Success! PDF downloaded.', 'success');
   } catch (e) {
-    showMsg(`❌ Error: ${e.message}`, 'error');
+    showMsg(`Error: ${e.message}`, 'error');
   } finally {
     btn.disabled = false;
     btn.textContent = 'Generate PDF';
@@ -46,7 +46,7 @@ async function callOpenAI(prompt) {
       'Authorization': `Bearer ${OPENAI_KEY}`
     },
     body: JSON.stringify({
-      model: 'gpt-3.5-turbo',
+      model: 'gpt-3.5-turbo', // Corrected model name here
       messages: [{ role: 'user', content: prompt }],
       temperature: 0.3,
       max_tokens: 1500
