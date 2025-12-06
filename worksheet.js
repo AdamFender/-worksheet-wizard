@@ -1,4 +1,4 @@
-const OPENAI_KEY = 'sk-XXXXXXXXXXXXXXXX'; // ← your API key here
+const OPENAI_KEY = 'YOUR_KEY_HERE';
 
 async function generate() {
   // Clear old messages
